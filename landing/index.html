@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Awesome Site Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-900 text-white font-sans">
+    <div class="container mx-auto px-4">
+      <header
+        class="flex justify-between items-center py-6 border-b border-gray-700"
+      >
+        <h1 class="text-2xl font-bold text-white">SiteBuilder</h1>
+        <nav class="flex items-center space-x-6">
+          <a href="#home" class="nav-link text-gray-300 hover:text-white"
+            >Home</a
+          >
+          <a href="#features" class="nav-link text-gray-300 hover:text-white"
+            >Features</a
+          >
+          <a href="#pricing" class="nav-link text-gray-300 hover:text-white"
+            >Pricing</a
+          >
+          <a
+            href="../builder/index.html"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
+            >Go to Builder</a
+          >
+        </nav>
+      </header>
+
+      <main id="router-view" class="py-10">
+        <section id="home" class="page">
+          <div class="text-center">
+            <h2 class="text-5xl font-extrabold mb-4">
+              Build Your Dream Website, Visually.
+            </h2>
+            <p class="text-xl text-gray-400 mb-8">
+              No code, no limits. Just drag, drop, and publish.
+            </p>
+            <a
+              href="../builder/index.html"
+              class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg text-lg"
+              >Start Building for Free</a
+            >
+          </div>
+        </section>
+
+        <section id="features" class="page">
+          <h2 class="text-4xl font-bold text-center mb-10">Features</h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-2">Drag & Drop</h3>
+              <p class="text-gray-400">
+                An intuitive interface that anyone can master. Simply drag
+                elements onto the canvas.
+              </p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-2">Live Editing</h3>
+              <p class="text-gray-400">
+                See your changes in real-time. Edit text, colors, and styles
+                instantly.
+              </p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-lg">
+              <h3 class="text-2xl font-bold mb-2">Component-Based</h3>
+              <p class="text-gray-400">
+                Build with powerful components like text blocks, buttons,
+                containers, and images.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="pricing" class="page">
+          <h2 class="text-4xl font-bold text-center mb-10">Pricing</h2>
+          <div class="text-center">
+            <div class="bg-gray-800 inline-block p-8 rounded-lg">
+              <h3 class="text-3xl font-bold mb-2">Free Tier</h3>
+              <p class="text-5xl font-bold mb-4">
+                $0<span class="text-lg font-normal text-gray-400">/month</span>
+              </p>
+              <p class="text-gray-400">
+                Perfect for getting started and building your first site.
+              </p>
+              <a
+                href="../builder/index.html"
+                class="mt-6 inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg"
+                >Get Started</a
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

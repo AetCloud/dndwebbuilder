@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">Site Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-900 text-white flex h-screen overflow-hidden">
+    <div class="app-wrapper">
+      <aside
+        id="sidebar"
+        class="w-64 bg-gray-800 p-4 border-r border-gray-700 flex flex-col overflow-y-auto"
+      >
+        <a
+          href="../landing/index.html"
+          class="text-sm text-blue-400 hover:underline mb-4 block"
+          >&larr; Back to Home</a
+        >
+
+        <details open class="mb-4">
+          <summary class="summary-header">Layout</summary>
+          <div class="space-y-2 mt-2">
+            <div class="draggable-component" draggable="true" data-type="page">
+              <div class="component-pill">New Page</div>
+            </div>
+            <div
+              class="draggable-component"
+              draggable="true"
+              data-type="container-1col"
+            >
+              <div class="component-pill">1-Column Container</div>
+            </div>
+            <div
+              class="draggable-component"
+              draggable="true"
+              data-type="container-2col"
+            >
+              <div class="component-pill">2-Column Container</div>
+            </div>
+            <div
+              class="draggable-component"
+              draggable="true"
+              data-type="container-3col"
+            >
+              <div class="component-pill">3-Column Container</div>
+            </div>
+            <div
+              class="draggable-component"
+              draggable="true"
+              data-type="spacer"
+            >
+              <div class="component-pill">Spacer</div>
+            </div>
+          </div>
+        </details>
+
+        <details open>
+          <summary class="summary-header">Elements</summary>
+          <div class="space-y-2 mt-2">
+            <div class="draggable-component" draggable="true" data-type="text">
+              <div class="component-pill">Text Block</div>
+            </div>
+            <div
+              class="draggable-component"
+              draggable="true"
+              data-type="button"
+            >
+              <div class="component-pill">Button</div>
+            </div>
+            <div class="draggable-component" draggable="true" data-type="image">
+              <div class="component-pill">Image</div>
+            </div>
+          </div>
+        </details>
+      </aside>
+
+      <main
+        id="main-content"
+        class="flex-1 flex flex-col bg-gray-700 overflow-hidden relative"
+      >
+        <div class="top-bar">
+          <button
+            id="sidebar-toggle"
+            class="icon-button"
+            title="Toggle Sidebar"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+          <div id="page-tabs" class="page-tabs-container"></div>
+          <button
+            id="settings-toggle"
+            class="icon-button"
+            title="Toggle Settings"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9.594 3.94c.09-.542.56-1.003 1.11-1.226.55-.223 1.156-.223 1.706 0 .55.223 1.02.684 1.11 1.226M15.75 9.75a3 3 0 11-6 0 3 3 0 016 0zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div
+          class="flex-1 overflow-y-auto p-4 relative"
+          id="canvas-wrapper"
+        ></div>
+      </main>
+
+      <aside
+        id="properties-panel"
+        class="w-72 bg-gray-800 p-4 border-l border-gray-700 overflow-y-auto"
+      ></aside>
+
+      <div id="settings-panel" class="settings-panel">
+        <h2 class="text-2xl font-bold mb-6">Project Settings</h2>
+
+        <div class="setting-item">
+          <label for="setting-title">Page Title</label>
+          <input type="text" id="setting-title" placeholder="My Awesome Site" />
+        </div>
+
+        <div class="flex space-x-2 mt-8">
+          <button id="save-btn" class="flex-1 action-button bg-blue-600">
+            Save
+          </button>
+          <button id="load-btn" class="flex-1 action-button bg-gray-600">
+            Load
+          </button>
+        </div>
+        <button id="export-btn" class="w-full action-button bg-green-600 mt-2">
+          Export HTML
+        </button>
+
+        <p
+          id="save-status"
+          class="text-sm text-center text-gray-400 mt-4 h-4"
+        ></p>
+      </div>
+    </div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
